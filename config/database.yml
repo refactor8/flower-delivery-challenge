@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  timeout: 5000
+
+development:
+  <<: *default
+  database: 'bw_devtest_development'
+  host: <%= ENV['DEVELOPMENT_DB_HOST'] || 'localhost' %>
+  username: <%= ENV['DEVELOPMENT_DB_USERNAME'] || 'psql' %>
+  password: <%= ENV['DEVELOPMENT_DB_PASSWORD'] %>
+
+test:
+  <<: *default
+  database: 'bw_devtest_test<%= ENV['TEST_ENV_NUMBER'] %>'
+  host: <%= ENV['DEVELOPMENT_DB_HOST'] || 'localhost' %>
+  username: <%= ENV['DEVELOPMENT_DB_USERNAME'] || 'psql' %>
+  password: <%= ENV['DEVELOPMENT_DB_PASSWORD'] %>
