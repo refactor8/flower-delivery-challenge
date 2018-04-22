@@ -5,6 +5,7 @@
       <%= f.text_field :recipient_name %>
     </div>
 
+    <label>Bouquet</label>
     <% @bouquets.each do |bouquet| %>
     <div class="radio">
       <label>
@@ -18,6 +19,16 @@
       <%= f.label(:delivery_on) %>
       <%= f.date_field :delivery_on %>
     </div>
+
+    <label>Shipping Method</label>
+    <% @shipping_methods.each do |shipping_method| %>
+    <div class="radio">
+      <label>
+        <%= f.radio_button(:shipping_method_id, shipping_method.id) %>
+        <%= shipping_method.name %> (<%= number_to_currency(shipping_method.price, unit: '£') %>)
+      </label>
+    </div>
+    <% end %>
 
     <%= f.submit 'Order', class: 'btn btn-default' %>
 <% end %>

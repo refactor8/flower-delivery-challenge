@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
   def index
     @order = Order.new
     @bouquets = Bouquet.all
+    @shipping_methods = ShippingMethod.all
   end
 
   def create
@@ -16,6 +17,6 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:recipient_name, :bouquet_id, :delivery_on)
+    params.require(:order).permit(:recipient_name, :bouquet_id, :delivery_on, :shipping_method_id)
   end
 end

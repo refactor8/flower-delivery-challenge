@@ -1,4 +1,4 @@
-class CreateBouquets < ActiveRecord::Migration
+class CreateBouquets < ActiveRecord::Migration[5.1]
   def change
     create_table :bouquets do |t|
       t.string :name, required: true
