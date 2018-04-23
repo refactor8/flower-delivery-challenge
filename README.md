@@ -6,8 +6,6 @@ We recommend you spend around 2-3 hours over this exercise, but how much time
 you take is up to you. Read through the brief below for details of what to do
 and what we're looking for.
 
-When you've finished please email steve@bloomandwild.com. If you have any questions, just drop us an email.
-
 ## Test brief
 
 In this test you'll be building a simple app to enable placement of an order
